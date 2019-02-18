@@ -1,9 +1,8 @@
 {
   "name": "frc-checkbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react component checkbox",
   "main": "lib/index.js",
-  "module": "es/index.js",
   "scripts": {
     "build": "babel build/dist/*.js -d build/lib && gulp build"
   },
