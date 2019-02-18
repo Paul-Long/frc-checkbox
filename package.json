@@ -1,11 +1,11 @@
 {
   "name": "frc-checkbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react component checkbox",
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "build": "gulp build"
+    "build": "babel build/dist/*.js -d build/lib && gulp build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,17 @@
   },
   "homepage": "https://github.com/Paul-Long/frc-checkbox#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
     "@types/classnames": "^2.2.7",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
