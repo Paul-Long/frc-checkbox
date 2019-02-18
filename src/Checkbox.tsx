@@ -8,6 +8,9 @@ interface ICheckboxProps {
   onChange?: Function;
   disabled?: boolean;
   style?: object;
+  size?: string;
+  indeterminateType?: string;
+  indeterminate?: boolean;
 }
 
 interface ICheckboxState {
@@ -19,7 +22,10 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
     prefixCls: 'frc-checkbox',
     checked: false,
     disabled: false,
-    style: {}
+    style: {},
+    size: 'default',
+    indeterminateType: 'square',
+    indeterminate: false
   };
 
   constructor(props: ICheckboxProps) {
@@ -49,16 +55,28 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
   };
 
   render() {
-    const {prefixCls, children, disabled, style} = this.props;
+    const {
+      prefixCls,
+      children,
+      disabled,
+      style,
+      size,
+      indeterminate,
+      indeterminateType
+    } = this.props;
     const {checked} = this.state;
-    const cls = classNames(prefixCls, {
+    const cls = classNames(prefixCls, `${prefixCls}-${size}`, {
       [`${prefixCls}-checked`]: checked,
-      [`${prefixCls}-disabled`]: disabled
+      [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-indeterminate`]: indeterminate && !checked,
+      [`${prefixCls}-indeterminate-${indeterminateType}`]:
+        indeterminate && !checked
     });
     return (
       <div className={cls} onClick={this.fClick} style={style}>
-        <div className={`${prefixCls}-inner`} />
-        {children}
+        <input className={`${prefixCls}-input`} type='checkbox' />
+        <span className={`${prefixCls}-inner`} />
+        <span>{children}</span>
       </div>
     );
   }
