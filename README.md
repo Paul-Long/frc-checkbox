@@ -8,8 +8,6 @@
 
 <div align="center">
 
-React 表格组件，支持多数据首次快速渲染
-
 [![npm package](https://img.shields.io/npm/v/frc-checkbox.svg?style=flat)](https://www.npmjs.com/package/frc-checkbox)
 [![NPM downloads](http://img.shields.io/npm/dm/frc-checkbox.svg?style=flat-square)](http://npmjs.com/frc-checkbox)
 [![Dependencies](https://img.shields.io/david/paul-long/frc-checkbox.svg?style=flat-square)](https://david-dm.org/paul-long/frc-checkbox)
