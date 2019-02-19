@@ -1,6 +1,6 @@
 {
   "name": "frc-checkbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react component checkbox",
   "main": "lib/index.js",
   "scripts": {
