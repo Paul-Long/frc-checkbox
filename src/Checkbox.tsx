@@ -11,6 +11,7 @@ interface ICheckboxProps {
   size?: string;
   indeterminateType?: string;
   indeterminate?: boolean;
+  className: string;
 }
 
 interface ICheckboxState {
@@ -62,10 +63,11 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
       style,
       size,
       indeterminate,
-      indeterminateType
+      indeterminateType,
+      className
     } = this.props;
     const {checked} = this.state;
-    const cls = classNames(prefixCls, `${prefixCls}-${size}`, {
+    const cls = classNames(prefixCls, className, `${prefixCls}-${size}`, {
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-indeterminate`]: indeterminate && !checked,
@@ -76,7 +78,7 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
       <div className={cls} onClick={this.fClick} style={style}>
         <input className={`${prefixCls}-input`} type='checkbox' />
         <span className={`${prefixCls}-inner`} />
-        <span>{children}</span>
+        <span className={`${prefixCls}-title`}>{children}</span>
       </div>
     );
   }
